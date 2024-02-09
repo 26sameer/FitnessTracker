@@ -36,7 +36,7 @@ const AddWorkout = ({ name, setName }) => {
     }
 
     await axios
-      .post('http://localhost:4000/activities/add', {
+      .post('https://fitness-tracker-603w.onrender.com/activities/add', {
         username: name,
         description: wname,
         duration,

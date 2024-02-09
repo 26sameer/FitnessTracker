@@ -28,7 +28,9 @@ const ViewGoals = ({ name, setName }) => {
   });
 
   const fetchGoal = async name => {
-    return await axios.get(`http://localhost:4000/goals/${name}`);
+    return await axios.get(
+      `https://fitness-tracker-603w.onrender.com/goals/${name}`
+    );
   };
 
   const logout = () => {
@@ -66,7 +68,7 @@ const ViewGoals = ({ name, setName }) => {
     }
 
     await axios
-      .post(`http://localhost:4000/goals/update/${id}`, {
+      .post(`https://fitness-tracker-603w.onrender.com/goals/update/${id}`, {
         username: name,
         goalName,
         description,
@@ -90,7 +92,7 @@ const ViewGoals = ({ name, setName }) => {
 
   const goalDelete = id => {
     axios
-      .delete(`http://localhost:4000/goals/${id}`)
+      .delete(`https://fitness-tracker-603w.onrender.com/goals/${id}`)
       .then(res => {
         res;
         setError('');
@@ -128,7 +130,7 @@ const ViewGoals = ({ name, setName }) => {
   const markComplete = () => {
     selectedGoal.map(goal_id => {
       axios
-        .delete(`http://localhost:4000/goals/${goal_id}`)
+        .delete(`https://fitness-tracker-603w.onrender.com/goals/${goal_id}`)
         .then(res => {
           res;
           setError('');

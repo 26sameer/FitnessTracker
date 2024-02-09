@@ -26,7 +26,9 @@ const ViewWorkouts = ({ name, setName }) => {
   });
 
   const fetchWorkout = async name => {
-    return await axios.get(`http://localhost:4000/activities/${name}`);
+    return await axios.get(
+      `https://fitness-tracker-603w.onrender.com/activities/${name}`
+    );
   };
 
   const logout = () => {
@@ -66,7 +68,7 @@ const ViewWorkouts = ({ name, setName }) => {
     }
 
     await axios
-      .post(`http://localhost:4000/activities/update/${id}`, {
+      .post(`https://fitness-tracker-603w.onrender.com/update/${id}`, {
         username: name,
         description: wname,
         duration,
@@ -90,7 +92,7 @@ const ViewWorkouts = ({ name, setName }) => {
 
   const workoutDelete = id => {
     axios
-      .delete(`http://localhost:4000/activities/${id}`)
+      .delete(`https://fitness-tracker-603w.onrender.com/${id}`)
       .then(res => {
         res;
         setError('');

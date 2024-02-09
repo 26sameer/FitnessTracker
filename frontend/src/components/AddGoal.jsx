@@ -28,7 +28,7 @@ const AddGoal = ({ name, setName }) => {
     }
 
     await axios
-      .post('http://localhost:4000/goals/add', {
+      .post('https://fitness-tracker-603w.onrender.com/goals/add', {
         username: name,
         goalName: gname,
         description: desc,
