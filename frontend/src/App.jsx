@@ -22,7 +22,7 @@ function App() {
 
   const handleSubmit = async name => {
     await axios
-      .post('https://fitness-tracker-603w.onrender.com/add', {
+      .post('https://fitness-tracker-603w.onrender.com/users/add', {
         username: name,
       })
       .then(res => {
