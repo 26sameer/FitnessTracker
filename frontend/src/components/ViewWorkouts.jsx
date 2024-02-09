@@ -68,12 +68,15 @@ const ViewWorkouts = ({ name, setName }) => {
     }
 
     await axios
-      .post(`https://fitness-tracker-603w.onrender.com/update/${id}`, {
-        username: name,
-        description: wname,
-        duration,
-        date: new Date().toISOString(),
-      })
+      .post(
+        `https://fitness-tracker-603w.onrender.com/activities/update/${id}`,
+        {
+          username: name,
+          description: wname,
+          duration,
+          date: new Date().toISOString(),
+        }
+      )
       .then(res => {
         res;
         setError('');
@@ -92,7 +95,7 @@ const ViewWorkouts = ({ name, setName }) => {
 
   const workoutDelete = id => {
     axios
-      .delete(`https://fitness-tracker-603w.onrender.com/${id}`)
+      .delete(`https://fitness-tracker-603w.onrender.com/activities/${id}`)
       .then(res => {
         res;
         setError('');

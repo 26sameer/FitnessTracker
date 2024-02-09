@@ -9,6 +9,12 @@ const Login = ({ name, handleSubmit, handleChange, error }) => {
             Fitness Tracker App
           </Heading>
           <Heading as="h2">Register / Login</Heading>
+          <p className="capitalize m-2">
+            Either use the test username <br /> or create a new one
+          </p>
+          <p className="text-xl mb-2">
+            username: <mark className="p-1">test</mark>
+          </p>
         </div>
         <div className="flex flex-col gap-2 p-5 border-2 border-sky-200 rounded-lg">
           <label className="text-lg" htmlFor="username">
