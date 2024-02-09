@@ -8,7 +8,7 @@ const app = express()
 const port = process.env.PORT || 5000
 
 app.use(cors({
-  origin:{""},
+  origin:{"https://fitness-tracker-nu-five.vercel.app/"},
   methods:{"POST","GET","DELETE"},
   credentials:true
 }))
