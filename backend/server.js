@@ -21,6 +21,10 @@ const activitiesRouter = require('./routes/activities')
 const usersRouter = require('./routes/users')
 const goalRouter = require('./routes/goals')
 
+app.get('/', (req, res) => {
+  res.json('Hello')
+})
+
 app.use('/activities', activitiesRouter)
 app.use('/users', usersRouter)
 app.use('/goals', goalRouter)
