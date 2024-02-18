@@ -1,6 +1,6 @@
 import { Button, Heading } from '@radix-ui/themes';
 
-const Login = ({ name, handleSubmit, handleChange, error }) => {
+const Login = ({ name, handleSubmit, handleChange, error, loading }) => {
   return (
     <div>
       <div>
@@ -28,8 +28,10 @@ const Login = ({ name, handleSubmit, handleChange, error }) => {
             onChange={handleChange}
           />
           <Button
-            className="font-semibold text-lg hover:bg-sky-200 hover:cursor-pointer"
+            className="font-semibold text-lg hover:cursor-pointer"
             onClick={() => handleSubmit(name)}
+            disabled={loading}
+            style={loading ? { cursor: 'not-allowed' } : {}}
           >
             Submit
           </Button>

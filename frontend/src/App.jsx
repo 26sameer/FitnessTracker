@@ -10,6 +10,7 @@ import Progress from './pages/Progress';
 function App() {
   const [name, setName] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -21,6 +22,7 @@ function App() {
   };
 
   const handleSubmit = async name => {
+    setLoading(true);
     await axios
       .post('https://fitness-tracker-603w.onrender.com/users/add', {
         username: name,
@@ -28,16 +30,20 @@ function App() {
       .then(res => {
         res;
         setError('');
+        setLoading(false);
         navigate('/workout');
       })
       .catch(err => {
         if (err.response.data.includes('E11000')) {
           setError('');
+          setLoading(false);
           navigate('/workout');
         } else if (err.response.data.includes('ValidationError')) {
           setError('Username is Required');
+          setLoading(false);
         } else {
           setError(err.message);
+          setLoading(false);
         }
       });
   };
@@ -51,6 +57,7 @@ function App() {
             <Login
               name={name}
               error={error}
+              loading={loading}
               handleChange={handleChange}
               handleSubmit={handleSubmit}
             />
