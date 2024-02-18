@@ -33,7 +33,13 @@ const Login = ({ name, handleSubmit, handleChange, error, loading }) => {
             disabled={loading}
             style={loading ? { cursor: 'not-allowed' } : {}}
           >
-            Submit
+            {loading ? (
+              <span>
+                Connecting <span className="animate-pulse">...</span>
+              </span>
+            ) : (
+              <span>Submit</span>
+            )}
           </Button>
         </div>
         {!!error && <p className="text-md m-2">{error}</p>}
